@@ -11,3 +11,11 @@ try {
     echo "Could not connect.";
 }
 ?>
+-- Пример SQL-запроса, создаваемого phpMyAdmin
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user VARCHAR(25) UNIQUE,
+    password CHAR(255),
+    register_date DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
