@@ -18,4 +18,32 @@ CREATE TABLE users (
     password CHAR(255),
     register_date DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+<?php
+include 'database.php';
+$username = "Patrick";
+$password = "rock3";
+$hash = password_hash($password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO users (user, password) VALUES ('$username', '$hash')";
+try {
+    mysqli_query($conn, $sql);
+    echo "User is now registered.";
+} catch(mysqli_sql_exception) {
+    echo "Could not register user (username may be taken).";
+}
+mysqli_close($conn);
+?>
+<?php
+include 'database.php';
+$username = "Patrick";
+$password = "rock3";
+$hash = password_hash($password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO users (user, password) VALUES ('$username', '$hash')";
+try {
+    mysqli_query($conn, $sql);
+    echo "User is now registered.";
+} catch(mysqli_sql_exception) {
+    echo "Could not register user (username may be taken).";
+}
+mysqli_close($conn);
+?>
 
